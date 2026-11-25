@@ -23,5 +23,9 @@ for i in range(1, DAYS+1, 1):
     os.makedirs(CODE_FOLDER_PATH + "/Day " + str(i), exist_ok=True)
     for person in PARTICIPANT_NAMES:
         os.makedirs(CODE_FOLDER_PATH + "/Day " + str(i) + "/" + person, exist_ok=True)
-        with open(CODE_FOLDER_PATH + "/Day " + str(i) + "/" + person + "/main.py", "w", encoding="utf-8") as f:
-            f.write("print('Hello, world!')\n")
+        os.makedirs(CODE_FOLDER_PATH + "/Day " + str(i) + "/_inputs", exist_ok=True)
+        file_path = CODE_FOLDER_PATH + "/Day " + str(i) + "/" + person + "/"
+        with open(file_path + "part1.py", "w", encoding="utf-8") as f:
+            f.write("#inputs are at ../_inputs\n\nprint('Hello, world!')")
+        with open(file_path + "part2.py", "w", encoding="utf-8") as f:
+            f.write("#inputs are at ../_inputs\n\nprint('Hello, world!')")
